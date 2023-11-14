@@ -10,18 +10,13 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
-      role: {
-        type: Sequelize.STRING(8),
-        allowNull: false,
-        defaultValue: 'customer',
-      },
       name: {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
       username: {
         type: Sequelize.STRING(20),
-        allowNull: false,
+        allowNull: true,
       },
       email: {
         type: Sequelize.STRING(100),
@@ -32,12 +27,18 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
+      role: {
+        type: Sequelize.STRING(8),
+        allowNull: false,
+        defaultValue: 'customer',
+      },
       birthDate: {
         type: Sequelize.DATE,
         allowNull: false,
+        field: 'birth_date',
       }
     }, {
-      timestamps: true,
+      underscored: true,
     })
   },
 

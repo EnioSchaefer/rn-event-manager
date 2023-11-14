@@ -13,23 +13,27 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-      date: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
       description: {
         type: Sequelize.STRING(5000),
         allowNull: false,
       },
-      ownerId: {
-        type: Sequelize.INTEGER,
+      date: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
       status: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
+      ownerId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: 'owner_id',
       }
     }, {
       timestamps: false,
+      underscored: true,
     });
   },
 
